@@ -39,7 +39,7 @@ if ( sizeof($request_array['events']) > 0 )
 		     $obj = json_decode($result);
 
 		     $reply_message = $result;
-		     $reply_message = 'ติดเชื้อสะสม '. $obj->{'Confirmed'}.' คน'.'\n'.'ติดเชื้อสะสม '. $obj->{'Recovered'}.' คน'; 
+		     $reply_message = 'ติดเชื้อสะสม '. $obj->{'Confirmed'}.' คน'.'  '.'ติดเชื้อสะสม '. $obj->{'Recovered'}.' คน'; 
 		   }
 	   	  if($text == "CDMA" || $text == "cdma"){
 		     $reply_message = '1, -3, -1, -1';	  
