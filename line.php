@@ -74,7 +74,8 @@ if ( sizeof($request_array['events']) > 0 )
 		      $obj = json_decode($result);
 
 		      $reply_message = $result;
-		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
+// 		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
+		      $reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';  
 		  }
    }
    else
