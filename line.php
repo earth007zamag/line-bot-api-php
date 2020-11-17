@@ -61,21 +61,6 @@ if ( sizeof($request_array['events']) > 0 )
 		     $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'status'}.' และ '. $obj->{'data'}.' OK'; 
 		  }
 		//$reply_message = '('.$text.') ได้รับข้อความเรียบร้อย!!';
-	   	  if($text == "@บอท ฉันต้องการค้นหาข้อมูลนิสิตชื่อ"){
-		      $url = 'http://bot.kantit.com/json_select_users.php';
-		      $ch = curl_init($url);
-		     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		     curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
-		     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
-		     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		     $result = curl_exec($ch);
-		     curl_close($ch);   
-
-		     $obj = json_decode($result);
-
-		     $reply_message = 'ชื่อ'. $obj->{'user_firstname'}. $obj->{'user_stuid'}. $obj->{'user_lastname'}; 
-		  }
    }
    else
     $reply_message = 'ระบบได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
