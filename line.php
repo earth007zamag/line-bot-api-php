@@ -57,7 +57,7 @@ if ( sizeof($request_array['events']) > 0 )
 
 		     $obj = json_decode($result);
 
-		     //$reply_message = $result;
+		     $reply_message = $result;
 		     $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'status'}.' และ '. $obj->{'data'}.' OK'; 
 		  }
 	   	  if($text == "@บอท ฉันต้องการค้นหาข้อมูลนิสิตชื่อ"){
@@ -73,6 +73,7 @@ if ( sizeof($request_array['events']) > 0 )
 
 		     $obj = json_decode($result);
 
+		     $reply_message = $result;
 		     $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
 		  }
    }
