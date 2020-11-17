@@ -74,7 +74,7 @@ if ( sizeof($request_array['events']) > 0 )
 
 		     $obj = json_decode($result);
 
-		     $reply_message = 'ชื่อ'. $obj->{'user_firstname'}; 
+		     $reply_message = 'ชื่อ'. $obj->{'user_firstname'}. $obj->{'user_stuid'}. $obj->{'user_lastname'}; 
 		  }
    }
    else
