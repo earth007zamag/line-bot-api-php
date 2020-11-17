@@ -61,7 +61,7 @@ if ( sizeof($request_array['events']) > 0 )
 		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'status'}.' และ '. $obj->{'data'}.' OK'; 
 		  }
 	   	  if($text == "@บอท ฉันต้องการค้นหาข้อมูลนิสิตชื่อ"){
-		      $url = 'https://thanach-060.herokuapp.com/bot.php';
+		      $url = 'http://bot.kantit.com/json_select_users.php';
 		     $ch = curl_init($url);
 		     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 		     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -74,7 +74,7 @@ if ( sizeof($request_array['events']) > 0 )
 		     $obj = json_decode($result);
 
 		      //$reply_message = $result;
- 		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{"user_firstname"}; 
+ 		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
 		  }
    }
    else
