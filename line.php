@@ -47,34 +47,34 @@ if ( sizeof($request_array['events']) > 0 )
 	   	  if($text == "@บอท ขอรหัสนิสิตของผู้พัฒนา ส่งไปที่ https://linebot.kantit.com/stuid.php"){
 		      $url = 'https://linebot.kantit.com/stuid.php';
 		      $ch = curl_init($url);
-		     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		     curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
-		     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
-		     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		     $result = curl_exec($ch);
-		     curl_close($ch);   
+		      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		      curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
+		      curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
+		      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		      $result = curl_exec($ch);
+		      curl_close($ch);   
 
-		     $obj = json_decode($result);
+		      $obj = json_decode($result);
 
-		     $reply_message = $result;
-		     $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'status'}.' และ '. $obj->{'data'}.' OK'; 
+		      $reply_message = $result;
+		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'status'}.' และ '. $obj->{'data'}.' OK'; 
 		  }
 	   	  if($text == "@บอท ฉันต้องการค้นหาข้อมูลนิสิตชื่อ"){
 		      $url = 'http://bot.kantit.com/json_select_users.php';
 		      $ch = curl_init($url);
-		     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-		     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		     curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
-		     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
-		     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-		     $result = curl_exec($ch);
-		     curl_close($ch);   
+		      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		      curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
+		      curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
+		      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		      $result = curl_exec($ch);
+		      curl_close($ch);   
 
-		     $obj = json_decode($result);
+		      $obj = json_decode($result);
 
-		     $reply_message = $result;
-		     $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
+		      $reply_message = $result;
+		      $reply_message = 'ผลการบันทึกข้อมูล'. $obj->{'user_firstname'}; 
 		  }
    }
    else
